@@ -17,8 +17,7 @@ public class urinals
     public void countUrinals() {}
 
     public Boolean goodString( String str ) { // checks to see if valid string
-        System.out.println("Not yet implemented");
-        return true;
+        return false;
     }
 
     public static void main( String[] args )
