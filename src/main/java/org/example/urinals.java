@@ -12,6 +12,10 @@ public class urinals
 
     }
 
+    public int countFreeUrinals ( String str) {
+        return 0;
+    }
+
     public void openfile() {
 
     }
