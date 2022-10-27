@@ -24,7 +24,7 @@ public class urinalsTest
         result = testUrinals.goodString("111111111");
         Assertions.assertTrue(result);
         result = testUrinals.goodString("-1");
-        Assertions.assertTrue(result);
+        Assertions.assertFalse(result);
         result = testUrinals.goodString("111111111111110000000000000");
         Assertions.assertFalse(result);
     }
