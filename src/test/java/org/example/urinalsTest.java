@@ -13,13 +13,13 @@ public class urinalsTest
     void goodString() {
         System.out.println("====== Akansh Kumar == TEST TWO EXECUTED =======");
         urinals testUrinals = new urinals();
-        Assertions.assertFalse( testUrinals.goodString("test1") );
-        Assertions.assertTrue(testUrinals.goodString("101010101010101"));
-        Assertions.assertFalse(testUrinals.goodString("102301"));
-        Assertions.assertTrue(testUrinals.goodString("000000"));
-        Assertions.assertTrue(testUrinals.goodString("111111111"));
-        Assertions.assertFalse(testUrinals.goodString("-1"));
-        Assertions.assertFalse(testUrinals.goodString("111111111111110000000000000"));
+        Assertions.assertEquals( false , testUrinals.goodString("test1") );
+        Assertions.assertEquals(true ,testUrinals.goodString("101010101010101"));
+        Assertions.assertEquals(false,testUrinals.goodString("102301"));
+        Assertions.assertEquals(true,testUrinals.goodString("000000"));
+        Assertions.assertEquals(true,testUrinals.goodString("111111111"));
+        Assertions.assertEquals(false,testUrinals.goodString("-1"));
+        Assertions.assertEquals(false,testUrinals.goodString("111111111111110000000000000"));
     }
 
     @Test
@@ -31,8 +31,6 @@ public class urinalsTest
         Assertions.assertEquals(2, testUrinals.countFreeUrinals("000001"));
         Assertions.assertEquals(0 , testUrinals.countFreeUrinals("1111111"));
         Assertions.assertEquals(0 , testUrinals.countFreeUrinals("1100111"));
-
-
 
     }
 }
