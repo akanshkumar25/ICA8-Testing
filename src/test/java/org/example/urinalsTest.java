@@ -4,6 +4,8 @@ package org.example;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.*;
+
 /**
  * Unit test for simple App.
  */
@@ -40,6 +42,31 @@ public class urinalsTest
         urinals testUrinals = new urinals();
         String str = testUrinals.readInput("./src/test/java/resources/urinalTest.dat");
         Assertions.assertEquals("1001000", str);
+
+    }
+
+    @Test
+    void writeOutput() {
+        System.out.println("====== Akansh Kumar == TEST writeOutput EXECUTED =======");
+        urinals testUrinals = new urinals();
+        int testResult = 3;
+        testUrinals.writeOutput(testResult);
+        File f = new File("./rule.txt");
+        StringBuilder stringBuilder = new StringBuilder();
+        Assertions.assertEquals(true , f.exists());
+        BufferedReader br;
+        try {
+            br = new BufferedReader(new FileReader(f));
+            int c;
+            //read file line by line
+            while ((c = br.read()) != -1){
+                char character = (char) c;
+                stringBuilder.append(character);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Assertions.assertEquals("1", stringBuilder.toString());
 
     }
 }

@@ -73,11 +73,9 @@ public class urinals
         return count;
     }
 
-    public void openfile() {
-
+    public void writeOutput(int result) {
+        System.out.println("not yet implemented");
     }
-
-    public void countUrinals() {}
 
     public boolean goodString( String str ) { // checks to see if valid string
         if (str.length() > 20)
