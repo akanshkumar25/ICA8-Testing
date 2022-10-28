@@ -1,5 +1,8 @@
 package org.example;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -10,8 +13,30 @@ import java.util.Arrays;
 public class urinals
 {
     public String readInput( String inputFilePath ) {
-        System.out.println ("not yet implemented");
-        return " ";
+        String path = new File(inputFilePath).getAbsolutePath();
+        StringBuilder stringBuilder = new StringBuilder();
+        BufferedReader br = null;
+        try{
+            //create file object
+            File file = new File(path);
+            //create BufferedReader object from the File
+            br = new BufferedReader(new FileReader(file));
+            int c;
+            //read file line by line
+            while ((c = br.read()) != -1){
+                char character = (char) c;
+                stringBuilder.append(character);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            if(br != null){
+                try {
+                    br.close();
+                }catch(Exception e){}
+            }
+        }
+        return stringBuilder.toString();
     }
 
     public int countFreeUrinals ( String str) {
