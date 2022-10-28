@@ -121,6 +121,17 @@ public class urinals
 
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        System.out.println( "Hello User , Reading the input from the file urinal.dat" );
+        urinals urinals = new urinals();
+        String str = urinals.readInput("src/main/resources/urinal.dat");
+        System.out.println(str);
+        if(!urinals.goodString(str))
+        {
+            System.out.println("Sorry , incorrect string . please try again");
+            System.exit(-1);
+        }
+        int result = urinals.countFreeUrinals(str);
+        System.out.println("result is: " + result );
+        urinals.writeOutput(result);
     }
 }
