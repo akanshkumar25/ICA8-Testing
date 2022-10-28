@@ -1,8 +1,6 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -74,7 +72,38 @@ public class urinals
     }
 
     public void writeOutput(int result) {
-        System.out.println("not yet implemented");
+        String resultPath = "./rule.txt";
+        File f = new File(resultPath);
+        int counter = 1;
+        StringBuilder stringBuilder = new StringBuilder();
+        while(f.exists()){
+            resultPath = stringBuilder.append("./rule")
+                    .append(counter)
+                    .append(".txt")
+                    .toString();
+            f = new File(resultPath);
+            counter++;
+        }
+        if(!f.exists()) {
+            File resultFile = new File(resultPath);
+            boolean createdFile;
+            try {
+                createdFile = resultFile.createNewFile();
+                if(createdFile){
+                    try {
+                        BufferedWriter f_writer = new BufferedWriter(new FileWriter(resultFile));
+                        f_writer.write(String.valueOf(result));
+                        System.out.print("File is created successfully with the content.");
+                        f_writer.close();
+                    }
+                    catch (IOException e) {
+                        System.out.print(e.getMessage());
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public boolean goodString( String str ) { // checks to see if valid string

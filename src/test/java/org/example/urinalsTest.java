@@ -66,7 +66,7 @@ public class urinalsTest
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Assertions.assertEquals("1", stringBuilder.toString());
+        Assertions.assertEquals("3", stringBuilder.toString());
 
     }
 }
