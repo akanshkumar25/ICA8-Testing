@@ -42,6 +42,9 @@ public class urinalsTest
         urinals testUrinals = new urinals();
         String str = testUrinals.readInput("./src/test/java/resources/urinalTest.dat");
         Assertions.assertEquals("1001000", str);
+        String str2 = testUrinals.readInput("./src/test/java/resources/urinalTest2.dat");
+        Assertions.assertEquals("", str2);
+
 
     }
 
