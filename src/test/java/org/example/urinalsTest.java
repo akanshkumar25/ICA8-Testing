@@ -31,6 +31,15 @@ public class urinalsTest
         Assertions.assertEquals(2, testUrinals.countFreeUrinals("000001"));
         Assertions.assertEquals(0 , testUrinals.countFreeUrinals("1111111"));
         Assertions.assertEquals(0 , testUrinals.countFreeUrinals("1100111"));
+    }
+
+
+    @Test
+    void readInput() {
+        System.out.println("====== Akansh Kumar == TEST readInput EXECUTED =======");
+        urinals testUrinals = new urinals();
+        String str = testUrinals.readInput("./src/test/java/resources/urinalTest.dat");
+        Assertions.assertEquals("1001000", str);
 
     }
 }

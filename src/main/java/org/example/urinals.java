@@ -9,8 +9,9 @@ import java.util.Arrays;
  */
 public class urinals
 {
-    public void getString() {
-
+    public String readInput( String inputFilePath ) {
+        System.out.println ("not yet implemented");
+        return " ";
     }
 
     public int countFreeUrinals ( String str) {
